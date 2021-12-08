@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raissa Viagens</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HOME -->
+    <header>
+        <nav>
+            <a class="logo" href="#home">raissa<span>Viagens</span>.</a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#pacotes">Pacotes</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+
+        <section id="home" class="header-content">
+            <h1>Cappadócia</h1>
+            <p>Garanta seu pacote para a Capadócia e encontra paisagens incríveis! Veja dicas completas para uma viagem inesquecível e de baixo custo!</p>
+            <button>Saiba mais</button>
+        </section>
+    </header>
+
+    <!-- PACOTES -->
+    <section id="pacotes" class="pacotes">
+        <h1 class="title">Pacotes</h1>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-tag-top">
+                    <p>Promoção</p>
+                </div>
+                <div class="card-tag-bottom">
+                    <p>R$ 2500</p>
+                </div>
+                <img class="card-image" src="assets/london2.jpg" alt="Londres">
+                <div class="card-content">
+                    <h1>Londres</h1>
+                    <h4><i data-feather="map-pin"></i>Inglaterra</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    <button>Detalhes</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-tag-top">
+                    <p>Promoção</p>
+                </div>
+                <div class="card-tag-bottom">
+                    <p>R$ 1800</p>
+                </div>
+                <img class="card-image" src="assets/shibuya.jpg" alt="Shibuya">
+                <div class="card-content">
+                    <h1>Shibuya</h1>
+                    <h4><i data-feather="map-pin"></i>Japão</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    <button>Detalhes</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-tag-top">
+                    <p>Promoção</p>
+                </div>
+                <div class="card-tag-bottom">
+                    <p>R$ 2250</p>
+                </div>
+                <img class="card-image" src="assets/berlim.jpg" alt="Berlim">
+                <div class="card-content">
+                    <h1>Berlim</h1>
+                    <h4><i data-feather="map-pin"></i>Alemanha</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    <button>Detalhes</button>
+                </div>
+            </div>
+        </div>
+         
+    </section>
+
+    <div class="divider-2"></div>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="servicos">
+        <h1 class="title">Serviços</h1>
+
+        <div class="cards">
+          <div class="card">
+              <i data-feather="map"></i>
+              <div class="card-content">
+                <h3>Tour guiados</h3>
+                <p>Os tours guiados são passeios realizados com   auxílio de um guis, que além de dar informações sobre   o local nos conduz ao longo do trajeto.</p>
+              </div>
+              <button>Saiba mais</button>
+          </div>
+
+          <div class="card">
+              <i data-feather="camera"></i>
+              <div class="card-content">
+                <h3>Fotografia profissional</h3>
+                <p>Nossos fotógrafos estão acostumados a registrar os   melhores momentos das viagens para que você aproveite   a paisagem sem se preocupar.</p>
+              </div>
+              <button>Saiba mais</button>
+          </div>
+
+          <div class="card">
+              <i data-feather="navigation"></i>
+              <div class="card-content">
+                <h3>Aluguel de veículo</h3>
+                <p>Para os clientes que preferem explorar o ambiente   sozinhos e curtem a liberdaed, oferecemos o seiços de   aluguel de veículos com preços super em conta.</p>
+              </div>
+              <button>Saiba mais</button>
+          </div>
+        </div>
+    </section>
+
+    <div class="divider-1"></div>
+
+    <!-- CONTATO -->
+    <section id="contato" class="contato">
+        <div class="contato-card">
+            <h1>Entre em contato</h1>
+            <ul>
+                <li>
+                    <i data-feather="map-pin"></i>
+                    Rua José Bonifacio, 100
+                </li>
+                <li>
+                    <i data-feather="mail"></i>
+                    contato@raissaviagens.com.br
+                </li>
+                <li>
+                    <i data-feather="phone"></i>
+                    (55) 9999-9999
+                </li>
+            </ul>
+        </div>
+        <div id="map"></div>
+    </section>
+
+    <!-- BACK TO TOP -->
+    <a href="#home" class="back-to-top"><i data-feather="arrow-up"></i></a>
+
+    <!-- SCRIPT -->
+    <script>
+        feather.replace();
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        function initMap() {
+            // The location of Uluru
+            var uluru = {
+                lat: -19.924108,
+                lng: -43.943470
+            };
+            // The map, centered at Uluru
+            var map = new google.maps.Map(
+                document.getElementById('map'), {
+                    zoom: 15,
+                    center: uluru
+                });
+            // The marker, positioned at Uluru
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+
+    <!-- main.js -->
+    <script src="main.js"></script>
+</body>
+</html>
