@@ -15,6 +15,8 @@ Some topics used to build the website:
 > 
 > :earth_americas: classList property
 
+:mag_right: See more details [HERE](https://raissamoreira.github.io/travel-website/)!!!
+
 ### Desktop :smile:
 ![Image Preview](https://github.com/RaissaMoreira/travel-website/blob/master/assets/image-desktop.PNG?raw=true)
 ### Mobile :smile:
